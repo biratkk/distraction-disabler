@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+body{
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root{
+
+}
+/**
+Each component should be 22 vw wide and 40vh down
+*/
+.shortcuts{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    margin:5vw;
+    background-color: rgb(236, 246, 246);
+    border-radius: 0.5em;
+    overflow-y: scroll;
+    width:88vw;
+    height:80vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.shortcuts::-webkit-scrollbar{
+    display: none;
+    scrollbar-width: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.shortcut-container{
+    border-radius: 1vw;
+    border:none;
+    margin-left: 0.5vw;
+    margin-top: 1vh;
+    background-color: rgba(207, 218, 218, 0.335);
+    width:21vw;
+    height: 38vh;
+}
+.shortcut-container:hover{
+    animation: scaleUp 0.3s;
+    animation-fill-mode: forwards;
+    /* transform: scale(1.01); */
+    background-color: rgba(219, 236, 236, 0.335);
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes scaleUp {
+    100%{
+        transform: scale(1.01);
+    }
+}
+.add-shortcut-container{
+    font-family: sans-serif;
+    border-radius: 1vw;
+    border:none;
+    margin-left: 0.5vw;
+    margin-top: 1vh;
+    background-color: rgba(207, 218, 218, 0.335);
+    width:21vw;
+    height: 38vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-shortcut-forms-container{
+    text-align: left;
+    width: 15vw;
 }
+.add-shortcut-form{
+    display: block;
+    margin-bottom: 2vh;
+}
+.add-shortcut-question{
+    font-size: 1vw;
+}
+.logo-container{
+    display: flex;
+    justify-content: center;
+    margin-top:3vh;
+    width:21vw;
+    height:20vh;
+}
+
+.logo{
+    width: 10vw;
+    height: 10vw;
+}
+
+.shortcut-name-container{
+    margin-top: 8vh;
+    width:21vw;
+    height: 5vh;
+    text-align: center;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(77, 121, 122);
+}
+
+.prompt-page{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 246, 246);
+}
+.prompt-container{
+    display: block;
+    background-color: rgb(235, 238, 246);
+    border-radius: 0.5vw;
+    box-shadow: 0.5vw 0.5vw 2vw rgb(192, 192, 223);
+    width:40vw;
+    height:25vh;
+}
+.prompt-question{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(77, 121, 122);
+    margin-top: 2vh;
+}
+.prompt-input{
+    width:30vw;
+    height:5vh;
+    margin-top:2vh;
+    margin-left: 5vw;
+    font-size: 3vh;
+}
+.prompt-button{
+    font-size:1.5vw;
+    border: solid rgb(138, 152, 197);
+    border-radius: 0.2vw;
+    background-color: rgba(207, 218, 218, 0.335);;
+    color:black;
+    float: left;
+    margin-top:2vh;
+    margin-left:7vw;
+    width:10vw;
+    height:5vh;
+}
+.prompt-button:hover{
+    background-color: rgba(192, 228, 228, 0.794);;
+}
+
+
