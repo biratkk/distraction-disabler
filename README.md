@@ -2,7 +2,7 @@
 
 App to disable distractions from sites like youtube and reddit by using a much more minimal interface instead of the graphical distracting interface that the corresponding web services use.
 
-App is currently in development and so production is not advisable.
+Currently in development and so using app for production is not advisable.
 
 To test the app out open the terminal and change directories to respective folder, then paste the following.
 
