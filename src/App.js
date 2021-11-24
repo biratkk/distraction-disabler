@@ -1,24 +1,34 @@
 
 import './App.css';
-
 import Prompt from './Prompt/Prompt';
-
 import Shortcut from './Shortcuts/Shortcut';
 import AddShortcut from './Shortcuts/AddShortcut/AddShortcut'
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import Store from './Store'
 
-export const PromptVisibleContext = createContext('functions')
+export const PromptVisibleContext = createContext('functions');
+const userDataStore = new Store({
+  configName:"shortcuts",
+  defaults:{
+    shortcutArray:[]
+  }
+});
+
+const getShorcutsFromProgramData = () => {
+  return userDataStore.get('shortcutArray');
+}
+
+const setShorcutsToProgramData = (shortcuts) => {
+  userDataStore.set('shorcutArray', shortcuts);
+}
+
 export default function App() {
   const [promptEnterVisible, setPromptEnterVisible] = useState(false);
   const [currentSelection, setCurrentSelection] = useState(null);
-
-
-
   const functions = {
     setPromptEnterVisible:setPromptEnterVisible,
     setCurrentSelection:setCurrentSelection
   }
-
 
   const [defaultShortcuts, setDefaultShortcuts] = useState([
       <Shortcut 
@@ -54,10 +64,15 @@ export default function App() {
         type = "duckduckgo" 
         searchField = {true}/>
   ])
-  
+
+  useEffect(() => {
+    let extraShortcuts = getShorcutsFromProgramData();
+    addShortcuts(extraShortcuts);
+  }, [])
+
   const addShortcuts = (elementToAdd) => {
-    console.log(defaultShortcuts);
     let temp = defaultShortcuts;
+    setShorcutsToProgramData(temp);
     temp.push(elementToAdd);
     setDefaultShortcuts(temp);
   }

@@ -2,6 +2,8 @@
 
 App to disable distractions from sites like youtube and reddit by using a much more minimal interface instead of the graphical distracting interface that the corresponding web services use.
 
+![The Product Output](output/imgOfProduct.png)
+
 Currently in development and so using app for production is not advisable.
 
 To test the app out open the terminal and change directories to respective folder, then paste the following.

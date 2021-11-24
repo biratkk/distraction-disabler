@@ -15,6 +15,13 @@ function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({fullscreen:true});
 
+    // Opens content in default browser instead of inside another electron window
+    // mainWindow.webContents.on('new-window', (e, url) => {
+    //     e.preventDefault();
+    //     require('electron').shell.openExternal(url);
+    // })
+
+
     // mainWindow.maximize();
     // and load the index.html of the app.
     mainWindow.loadURL('http://localhost:3000');
